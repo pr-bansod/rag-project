@@ -3,12 +3,11 @@ from typing import Annotated, Generator
 
 from fastapi import Depends, Request
 
-# Week 1: Removed API key authentication for simplicity
+# Removed API key authentication for simplicity
 from sqlalchemy.orm import Session
 from src.config import Settings
 from src.db.interfaces.base import BaseDatabase
 
-# Week 1: Simplified - no API key authentication needed for local learning
 
 @lru_cache
 def get_settings() -> Settings:
@@ -32,15 +31,14 @@ def get_db_session(database: Annotated[BaseDatabase, Depends(get_database)]) -> 
         yield session
 
 
-# Week 2+: PDF parser service (not implemented in Week 1)
+
 def get_pdf_parser_service(request: Request):
     """Get PDF parser service from app state (Week 2+ - not implemented yet)."""
     return None
 
 
-# Week 1: OpenSearch service (placeholder - full implementation in Week 3+)
 def get_opensearch_service(request: Request):
-    """Get OpenSearch service from app state (Week 3+ - placeholder for Week 1)."""
+    """Get OpenSearch service from app state """
     return getattr(request.app.state, "opensearch_service", None)
 
 

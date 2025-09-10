@@ -17,17 +17,17 @@ class ParsingException(Exception):
     """Base exception for parsing-related errors."""
 
 
-# Week 2+: PDF parsing exceptions (not implemented in Week 1)
+# Week 2+: PDF parsing exceptions 
 # class PDFParsingException(ParsingException):
 #     """Base exception for PDF parsing-related errors."""
 
 
-# Week 3+: OpenSearch exceptions (placeholders for Week 1)
+# Week 3+: OpenSearch exceptions 
 class OpenSearchException(Exception):
     """Base exception for OpenSearch-related errors."""
 
 
-# Week 6+: LLM exceptions (placeholders for Week 1)
+# Week 6+: LLM exceptions 
 class LLMException(Exception):
     """Base exception for LLM-related errors."""
 
