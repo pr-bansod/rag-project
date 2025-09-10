@@ -1,10 +1,8 @@
 # Airflow Configuration
 
-This directory contains Apache Airflow configuration and DAGs for the arXiv Paper Curator project.
+This directory contains Apache Airflow configuration and DAGs.
 
-## Week 1 Setup
-
-For Week 1, we have a basic setup with:
+## Setup
 
 - **hello_world_dag.py**: Simple test DAG to verify Airflow is working
 - **init-db.sql**: Database initialization script
@@ -24,10 +22,3 @@ airflow/
 The Airflow service is configured to run via Docker Compose and can be accessed at:
 - Web UI: http://localhost:8080
 - Default credentials: admin/[auto-generated password]
-
-## Future Weeks
-
-In later weeks, this directory will contain:
-- arXiv paper fetching DAGs
-- PDF processing workflows
-- Data pipeline orchestration
