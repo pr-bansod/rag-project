@@ -2,8 +2,6 @@ from functools import lru_cache
 from typing import Annotated, Generator
 
 from fastapi import Depends, Request
-
-# Removed API key authentication for simplicity
 from sqlalchemy.orm import Session
 from src.config import Settings
 from src.db.interfaces.base import BaseDatabase
@@ -31,29 +29,6 @@ def get_db_session(database: Annotated[BaseDatabase, Depends(get_database)]) -> 
         yield session
 
 
-
-def get_pdf_parser_service(request: Request):
-    """Get PDF parser service from app state (Week 2+ - not implemented yet)."""
-    return None
-
-
-def get_opensearch_service(request: Request):
-    """Get OpenSearch service from app state """
-    return getattr(request.app.state, "opensearch_service", None)
-
-
-# Phase 3: LLM service (skeleton only)
-def get_llm_service(request: Request):
-    """Get LLM service from app state (Phase 3 - not implemented yet)."""
-    # Phase 3: Will return actual LLM service
-    return None
-
-
-# Dependency type aliases for better type hints
 SettingsDep = Annotated[Settings, Depends(get_settings)]
 DatabaseDep = Annotated[BaseDatabase, Depends(get_database)]
 SessionDep = Annotated[Session, Depends(get_db_session)]
-PDFParserServiceDep = Annotated[object, Depends(get_pdf_parser_service)]
-OpenSearchServiceDep = Annotated[object, Depends(get_opensearch_service)]
-# Phase 3: LLM service dependency (not used in Phase 2)
-# LLMServiceDep = Annotated[object, Depends(get_llm_service)]
