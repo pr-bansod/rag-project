@@ -1,7 +1,7 @@
 [project]
-name = "moai-zero-to-rag"
-version = "0.1.0"
-description = "Mother-of-AI Phase-1-Zero to RAG"
+name = "rag-system"
+version = "1.1.0"
+description = "RAG System"
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "fastapi[standard]>=0.115.12",
